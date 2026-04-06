@@ -1,5 +1,6 @@
 // src/sanity/schemaTypes/index.ts
 // Central export — import this in sanity.config.ts
+export { homepage }     from './homepage'
 export { siteSettings } from './siteSettings'
 export { service }      from './service'
 export { blogPost }     from './blogPost'

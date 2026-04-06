@@ -1,4 +1,4 @@
-// src/sanity/queries.ts
+// src/sanity/lib/queries.ts
 // GROQ queries for all NeoFatbury content types
 
 import { client } from './client'
@@ -6,10 +6,7 @@ import { client } from './client'
 // ── Homepage ────────────────────────────────────────────
 export async function getHomepage() {
   return client.fetch(`*[_type == "homepage"][0]{
-    hero,
-    aboutSection,
-    whyUsPoints,
-    seo
+    hero, aboutSection, whyUsPoints, seo
   }`)
 }
 

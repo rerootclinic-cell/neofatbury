@@ -1,9 +1,21 @@
 // src/sanity/schemaTypes/index.ts
-// Central export — import this in sanity.config.ts
-export { homepage }     from './homepage'
-export { siteSettings } from './siteSettings'
-export { service }      from './service'
-export { blogPost }     from './blogPost'
-export { teamMember }   from './teamMember'
-export { testimonial }  from './testimonial'
-export { gallery }      from './gallery'
+import { homepage } from './homepage'
+import { service } from './service'
+import { blogPost } from './blogPost'
+import { teamMember } from './teamMember'
+import { testimonial } from './testimonial'
+import { gallery } from './gallery'
+import { siteSettings } from './siteSettings'
+
+export const schemaTypes = [
+  // Singleton documents (only one each)
+  homepage,
+  siteSettings,
+
+  // Repeatable content
+  service,
+  blogPost,
+  teamMember,
+  testimonial,
+  gallery,
+]

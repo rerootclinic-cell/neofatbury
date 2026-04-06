@@ -3,7 +3,7 @@ import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import { visionTool } from '@sanity/vision'
 import { structure } from './structure'
-import { homepage, siteSettings, service, blogPost, teamMember, testimonial, gallery } from './schemaTypes'
+import { schemaTypes } from './schemaTypes'
 
 export default defineConfig({
   name:  'neofatbury',
@@ -18,6 +18,6 @@ export default defineConfig({
   ],
 
   schema: {
-    types: [homepage, siteSettings, service, blogPost, teamMember, testimonial, gallery],
+    types: schemaTypes,
   },
 })

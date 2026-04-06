@@ -131,8 +131,8 @@ export default function Home() {
         </div>
 
         {/* Arrows */}
-        <button onClick={prev} style={arrowStyle('left')}>‹</button>
-        <button onClick={next} style={arrowStyle('right')}>›</button>
+        <button className="hero-arrow" onClick={prev} style={arrowStyle('left')}>‹</button>
+        <button className="hero-arrow" onClick={next} style={arrowStyle('right')}>›</button>
 
         {/* Dots */}
         <div style={{ position: 'absolute', bottom: '1.5rem', left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: '0.5rem', zIndex: 3 }}>
@@ -152,12 +152,12 @@ export default function Home() {
           <p className="section-subtitle">Trusted clinical care backed by science, technology and compassion.</p>
 
           {/* 4-column top row + 2 centred below — exactly like Oliva */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.25rem', marginBottom: '1.25rem' }}>
+          <div className="grid grid-4" style={{ marginBottom: '1.25rem' }}>
             {WHY_CARDS.slice(0, 4).map((c, i) => (
               <WhyCard key={i} icon={c.icon} text={c.text} />
             ))}
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.25rem', maxWidth: '620px', margin: '0 auto' }}>
+          <div className="grid grid-2" style={{ maxWidth: '620px', margin: '0 auto' }}>
             {WHY_CARDS.slice(4).map((c, i) => (
               <WhyCard key={i} icon={c.icon} text={c.text} />
             ))}
@@ -172,11 +172,11 @@ export default function Home() {
         <div className="container" style={{ display: 'flex', alignItems: 'center', gap: '4rem', flexWrap: 'wrap' }}>
 
           {/* LEFT — Doctors image with teal circle bg + floating stat badges */}
-          <div style={{ flex: '1 1 420px', position: 'relative', minHeight: '360px' }}>
+          <div style={{ flex: '1 1 320px', position: 'relative', minHeight: '360px', maxWidth: '100%' }}>
             {/* Teal circle background */}
             <div style={{
               position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)',
-              width: '340px', height: '340px', borderRadius: '50%',
+              width: 'min(340px, 90vw)', height: 'min(340px, 90vw)', borderRadius: '50%',
               backgroundColor: 'var(--color-cyan)', opacity: 0.18, zIndex: 0
             }} />
 
@@ -191,7 +191,7 @@ export default function Home() {
             </div>
 
             {/* Floating stat badges */}
-            <div style={statBadge('top: 10%; left: -10px')}>
+            <div className="stat-badge" style={statBadge('top: 10%; left: 0')}>
               <span style={{ fontSize: '1.5rem', color: 'var(--color-cyan)' }}>🏅</span>
               <div>
                 <div style={{ fontWeight: '700', color: 'var(--color-primary)', fontSize: '1.1rem', lineHeight: 1 }}>10 +</div>
@@ -199,7 +199,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div style={statBadge('top: 38%; right: -10px')}>
+            <div className="stat-badge" style={statBadge('top: 38%; right: -15px')}>
               <span style={{ fontSize: '1.5rem', color: 'var(--color-cyan)' }}>📍</span>
               <div>
                 <div style={{ fontWeight: '700', color: 'var(--color-primary)', fontSize: '1.1rem', lineHeight: 1 }}>2</div>
@@ -207,7 +207,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div style={statBadge('bottom: 12%; left: -10px')}>
+            <div className="stat-badge" style={statBadge('bottom: 12%; left: 0')}>
               <span style={{ fontSize: '1.5rem', color: 'var(--color-cyan)' }}>👥</span>
               <div>
                 <div style={{ fontWeight: '700', color: 'var(--color-primary)', fontSize: '1.1rem', lineHeight: 1 }}>15K +</div>
@@ -361,7 +361,7 @@ export default function Home() {
       <section className="section bg-surface" id="book">
         <div className="container" style={{ maxWidth: '500px' }}>
           <h2 className="section-title text-center">Book Your Consultation Today</h2>
-          <p className="section-subtitle">Our dermatologists will call you back within 1 hour.</p>
+          <p className="section-subtitle text-center">Our dermatologists will call you back within 1 hour.</p>
           <LeadForm title="Schedule Expert Consultation" />
         </div>
       </section>
@@ -370,6 +370,16 @@ export default function Home() {
       <style>{`
         @media (min-width: 901px) {
           .hero-form { display: block !important; }
+        }
+        @media (max-width: 768px) {
+          .hero-arrow { display: none !important; }
+          .stat-badge {
+            padding: 0.5rem 0.75rem !important;
+            min-width: 120px !important;
+          }
+          .stat-badge > span { font-size: 1.25rem !important; }
+          .stat-badge div div:first-child { font-size: 1rem !important; }
+          .stat-badge div div:last-child { font-size: 0.7rem !important; }
         }
       `}</style>
     </>

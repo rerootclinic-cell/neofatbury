@@ -1,0 +1,105 @@
+﻿node.exe : ΓÜá Warning: Next.js inferred your workspace 
+root, but it may not be correct.
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (ΓÜá Warning 
+   : Ne...not be correct.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ We detected multiple lockfiles and selected the 
+directory of C:\Users\Ashok Sharma\package-lock.json as 
+the root directory.
+ To silence this warning, set `turbopack.root` in your 
+Next.js config, or consider removing one of the 
+lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/n
+ext-config-js/turbopack#root-directory for more 
+information.
+ Detected additional lockfiles: 
+   * C:\Users\Ashok 
+Sharma\Videos\Neofatbury\frontend\package-lock.json
+
+Γû▓ Next.js 16.2.2 (Turbopack)
+
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 2 errors:
+./Videos/Neofatbury/frontend/node_modules/sanity-plugin-m
+edia/dist/index.mjs:21:1
+Export Controller doesn't exist in target module
+  [90m19 |[0m [36mimport[0m { [33mVirtuoso[0m, 
+[33mVirtuosoGrid[0m, [33mGroupedVirtuoso[0m } 
+[36mfrom[0m [32m"react-virtuoso"[0m;
+  [90m20 |[0m [36mimport[0m { zodResolver } 
+[36mfrom[0m [32m"@hookform/resolvers/zod"[0m;
+[31m[1m>[0m [90m21 |[0m [36mimport[0m { 
+[33mController[0m, useForm } [36mfrom[0m 
+[32m"react-hook-form"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m22 |[0m [36mimport[0m * [36mas[0m z 
+[36mfrom[0m [32m"zod"[0m;
+  [90m23 |[0m [36mimport[0m { format, formatRelative 
+} [36mfrom[0m [32m"date-fns"[0m;
+  [90m24 |[0m [36mimport[0m filesize [36mfrom[0m 
+[32m"filesize"[0m;
+
+The export Controller was not found in module [project]/V
+ideos/Neofatbury/frontend/node_modules/react-hook-form/di
+st/react-server.esm.mjs [app-rsc] (ecmascript).
+Did you mean to import createFormControl?
+All exports of the module are statically known (It 
+doesn't have dynamic exports). So it's known statically 
+that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./Videos/Neofatbury/frontend/node_modules/sanity-plug
+in-media/dist/index.mjs
+    ./Videos/Neofatbury/frontend/sanity.config.ts
+    ./Videos/Neofatbury/frontend/src/app/studio/[[...tool
+]]/page.tsx
+
+
+./Videos/Neofatbury/frontend/node_modules/sanity-plugin-m
+edia/dist/index.mjs:21:1
+Export useForm doesn't exist in target module
+  [90m19 |[0m [36mimport[0m { [33mVirtuoso[0m, 
+[33mVirtuosoGrid[0m, [33mGroupedVirtuoso[0m } 
+[36mfrom[0m [32m"react-virtuoso"[0m;
+  [90m20 |[0m [36mimport[0m { zodResolver } 
+[36mfrom[0m [32m"@hookform/resolvers/zod"[0m;
+[31m[1m>[0m [90m21 |[0m [36mimport[0m { 
+[33mController[0m, useForm } [36mfrom[0m 
+[32m"react-hook-form"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m22 |[0m [36mimport[0m * [36mas[0m z 
+[36mfrom[0m [32m"zod"[0m;
+  [90m23 |[0m [36mimport[0m { format, formatRelative 
+} [36mfrom[0m [32m"date-fns"[0m;
+  [90m24 |[0m [36mimport[0m filesize [36mfrom[0m 
+[32m"filesize"[0m;
+
+The export useForm was not found in module [project]/Vide
+os/Neofatbury/frontend/node_modules/react-hook-form/dist/
+react-server.esm.mjs [app-rsc] (ecmascript).
+Did you mean to import set?
+All exports of the module are statically known (It 
+doesn't have dynamic exports). So it's known statically 
+that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./Videos/Neofatbury/frontend/node_modules/sanity-plug
+in-media/dist/index.mjs
+    ./Videos/Neofatbury/frontend/sanity.config.ts
+    ./Videos/Neofatbury/frontend/src/app/studio/[[...tool
+]]/page.tsx
+
+
+    at ignore-listed frames

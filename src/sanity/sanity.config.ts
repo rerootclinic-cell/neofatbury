@@ -1,19 +1,9 @@
 // src/sanity/sanity.config.ts
-// Used when running the Studio embedded inside Next.js at /studio route
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import { visionTool } from '@sanity/vision'
 import { structure } from './structure'
-
-// ── Schemas ──────────────────────────────────────────────
-import { homePage }    from './schemas/homePage'
-import { service }     from './schemas/service'
-import { blogPost }    from './schemas/blogPost'
-import { teamMember }  from './schemas/teamMember'
-import { testimonial } from './schemas/testimonial'
-import { gallery }     from './schemas/gallery'
-import { siteSettings } from './schemas/siteSettings'
-import { locationPage } from './schemas/locationPage'
+import { siteSettings, service, blogPost, teamMember, testimonial, gallery } from './schemaTypes'
 
 export default defineConfig({
   name:  'neofatbury',
@@ -28,15 +18,6 @@ export default defineConfig({
   ],
 
   schema: {
-    types: [
-      homePage,
-      service,
-      blogPost,
-      teamMember,
-      testimonial,
-      gallery,
-      siteSettings,
-      locationPage,
-    ],
+    types: [siteSettings, service, blogPost, teamMember, testimonial, gallery],
   },
 })

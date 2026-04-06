@@ -3,19 +3,49 @@ import { defineType, defineField } from 'sanity'
 
 export const teamMember = defineType({
   name: 'teamMember',
-  title: '👩‍⚕️ Team Member',
+  title: '👩‍⚕️ Team Members',
   type: 'document',
   fields: [
-    defineField({ name: 'name', title: 'Full Name', type: 'string', validation: (r) => r.required() }),
-    defineField({ name: 'role', title: 'Role / Designation', type: 'string', description: 'e.g. Senior Dermatologist, Trichologist' }),
-    defineField({ name: 'order', title: 'Display Order', type: 'number' }),
-    defineField({ name: 'photo', title: 'Photo', type: 'image', options: { hotspot: true } }),
-    defineField({ name: 'bio', title: 'Short Bio', type: 'text', rows: 4 }),
     defineField({
-      name: 'qualifications', title: 'Qualifications',
-      type: 'array', of: [{ type: 'string' }],
-      description: 'e.g. MBBS, MD (Dermatology), DNB',
+      name: 'name',
+      title: 'Full Name',
+      type: 'string',
+      validation: (r) => r.required(),
+    }),
+    defineField({
+      name: 'role',
+      title: 'Role / Title',
+      type: 'string',
+      description: 'e.g. "Lead Dermatologist", "Aesthetic Therapist"',
+    }),
+    defineField({
+      name: 'photo',
+      title: 'Photo',
+      type: 'image',
+      options: { hotspot: true },
+    }),
+    defineField({
+      name: 'bio',
+      title: 'Bio',
+      type: 'text',
+      rows: 4,
+    }),
+    defineField({
+      name: 'qualifications',
+      title: 'Qualifications',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: { layout: 'tags' },
+      description: 'e.g. MBBS, MD Dermatology',
+    }),
+    defineField({
+      name: 'order',
+      title: 'Display Order',
+      type: 'number',
     }),
   ],
-  preview: { select: { title: 'name', subtitle: 'role', media: 'photo' } },
+
+  preview: {
+    select: { title: 'name', subtitle: 'role', media: 'photo' },
+  },
 })

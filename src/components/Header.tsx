@@ -10,7 +10,7 @@ export default function Header() {
     <header style={wrapperStyle}>
       {/* ── TOP BAR ─────────────────────────────────────────── */}
       <div style={topBarStyle} className="top-bar-mobile-hide">
-        <div className="flex items-center justify-between" style={{ height: '100%', padding: '0 2rem' }}>
+        <div className="flex items-center justify-between" style={{ height: '100%', padding: '0 2rem 0 0.5rem' }}>
           {/* Left */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', fontSize: '0.82rem', color: '#444' }}>
             <span>🌐 English</span>
@@ -31,7 +31,7 @@ export default function Header() {
 
       {/* ── MAIN NAV ────────────────────────────────────────── */}
       <div style={mainNavStyle} className="main-nav-mobile">
-        <div className="flex items-center justify-between" style={{ height: '100%', padding: '0 2rem 0 0', width: '100%', maxWidth: '100%' }}>
+        <div className="flex items-center justify-between" style={{ height: '100%', padding: '0 2rem 0 0', width: '100%' }}>
           {/* Logo - Shifted to absolute left corner */}
           <Link href="/" style={{ ...logoStyle, marginLeft: '0' }}>
             <Image

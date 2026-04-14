@@ -6,24 +6,51 @@ import LeadForm from "@/components/LeadForm";
 export default function AntiDandruffTreatment() {
   return (
     <>
-      {/* 1. HERO SECTION - TRIPLE PILLAR */}
+      {/* 1. HERO SECTION - HOME PAGE STYLE DESIGN */}
       <section className="service-hero">
-        <div className="container">
+        <div className="container" style={{ maxWidth: '1450px' }}>
           <div className="service-hero-grid">
+            
+            {/* Pillar 1: Full Visual Subject */}
             <div className="hero-visual-pillar">
               <div className="visual-image-wrapper">
-                <Image src="/images/neofatbury-hair-standard.png" alt="Anti-Dandruff Treatment" width={500} height={680} priority style={{ objectFit: 'cover', objectPosition: 'top center' }} />
+                <Image 
+                  src="/images/neofatbury-hair-standard.png" 
+                  alt="Anti-Dandruff Treatment" 
+                  width={650} 
+                  height={800} 
+                  priority 
+                />
               </div>
             </div>
+
+            {/* Pillar 2: Strategic Content Hub */}
             <div className="service-hero-text">
-              <h1>Dandruff-Free.<br/><span className="accent">Healthy Scalp.</span></h1>
-              <p>Clinical scalp treatments to eliminate dandruff, reduce flaking, and restore scalp health. Expert dermatologist-guided protocols for lasting relief.</p>
+              <h1>
+                <span className="highlight">Dandruff-Free.</span> <br/>
+                <span className="accent">Healthy Scalp.</span>
+              </h1>
+              <p>
+                Clinical scalp treatments to eliminate dandruff, reduce flaking, and restore scalp health. 
+                Experience expert dermatologist-guided protocols for lasting relief and hair health.
+              </p>
               <div className="hero-trust-badges">
-                <div className="hero-trust-badge"><span>🛡️</span><span>SAFE & EFFECTIVE</span></div>
-                <div className="hero-trust-badge"><span>✨</span><span>LASTING RELIEF</span></div>
+                <div className="hero-trust-badge">
+                  <span>🛡️</span>
+                  <span>SAFE & EFFECTIVE</span>
+                </div>
+                <div className="hero-trust-badge">
+                  <span>✨</span>
+                  <span>LASTING RELIEF</span>
+                </div>
               </div>
             </div>
-            <div className="service-hero-form"><LeadForm /></div>
+
+            {/* Pillar 3: Lead Form Container */}
+            <div className="service-hero-form">
+              <LeadForm />
+            </div>
+
           </div>
         </div>
       </section>

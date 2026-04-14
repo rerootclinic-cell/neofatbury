@@ -31,28 +31,51 @@ const TREATMENTS = [
 export default function SlimmingPage() {
   return (
     <>
-      {/* 1. HERO SECTION - TRIPLE PILLAR */}
+      {/* 1. HERO SECTION - HOME PAGE STYLE DESIGN */}
       <section className="service-hero">
-        <div className="container">
+        <div className="container" style={{ maxWidth: '1450px' }}>
           <div className="service-hero-grid">
+            
+            {/* Pillar 1: Full Visual Subject */}
             <div className="hero-visual-pillar">
               <div className="visual-image-wrapper">
-                <Image src="/images/neofatbury-slimming-standard.png" alt="Slimming Clinic Hyderabad" width={500} height={680} priority style={{ objectFit: 'cover', objectPosition: 'top center' }} />
+                <Image 
+                  src="/images/neofatbury-slimming-standard.png" 
+                  alt="Slimming Clinic" 
+                  width={650} 
+                  height={800} 
+                  priority 
+                />
               </div>
             </div>
+
+            {/* Pillar 2: Strategic Content Hub */}
             <div className="service-hero-text">
-              <h1>Get the Body You<br/><span className="accent">Always Desired</span></h1>
-              <p>Safe, scientific, and medically supervised slimming solutions. From fat freezing to holistic weight management, achieve your goals gracefully.</p>
+              <h1>
+                <span className="highlight">Perfect Shape.</span> <br/>
+                <span className="accent">Medically Guided.</span>
+              </h1>
+              <p>
+                Safe, scientific, and medically supervised slimming solutions. 
+                From non-surgical fat freezing to holistic weight management, achieve your goals gracefully with experts.
+              </p>
               <div className="hero-trust-badges">
-                <div className="hero-trust-badge"><span>❄️</span><span>NON-SURGICAL</span></div>
-                <div className="hero-trust-badge"><span>🛡️</span><span>MEDICALLY SAFE</span></div>
+                <div className="hero-trust-badge">
+                  <span>❄️</span>
+                  <span>NON-SURGICAL</span>
+                </div>
+                <div className="hero-trust-badge">
+                  <span>🛡️</span>
+                  <span>MEDICALLY SAFE</span>
+                </div>
               </div>
             </div>
-            <div className="service-hero-form"><LeadForm title="Book Body Analysis" /></div>
-          </div>
-        </div>
-      </section>
+
+            {/* Pillar 3: Lead Form Container */}
+            <div className="service-hero-form">
+              <LeadForm title="Book Body Analysis" />
             </div>
+
           </div>
         </div>
       </section>

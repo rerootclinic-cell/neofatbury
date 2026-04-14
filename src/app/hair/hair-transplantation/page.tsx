@@ -7,23 +7,51 @@ export default function HairTransplantation() {
   return (
     <>
       {/* 1. HERO SECTION - TRIPLE PILLAR */}
+      {/* 1. HERO SECTION - HOME PAGE STYLE DESIGN */}
       <section className="service-hero">
-        <div className="container">
+        <div className="container" style={{ maxWidth: '1450px' }}>
           <div className="service-hero-grid">
+            
+            {/* Pillar 1: Full Visual Subject */}
             <div className="hero-visual-pillar">
               <div className="visual-image-wrapper">
-                <Image src="/images/neofatbury-hair-standard.png" alt="Hair Transplantation" width={500} height={680} priority style={{ objectFit: 'cover', objectPosition: 'top center' }} />
+                <Image 
+                  src="/images/neofatbury-hair-standard.png" 
+                  alt="Hair Transplantation" 
+                  width={650} 
+                  height={800} 
+                  priority 
+                />
               </div>
             </div>
+
+            {/* Pillar 2: Strategic Content Hub */}
             <div className="service-hero-text">
-              <h1>Hair Restoration.<br/><span className="accent">Permanent Confidence.</span></h1>
-              <p>Advanced FUE and DHT hair transplantation for natural, high-density results. Restore your hairline permanently with our lead specialists.</p>
+              <h1>
+                <span className="highlight">Hair Restoration.</span> <br/>
+                <span className="accent">Permanent Results.</span>
+              </h1>
+              <p>
+                Advanced FUE and DHT hair transplantation for natural, high-density results. 
+                Restore your hairline permanently with our lead specialists and gold-standard surgical protocols.
+              </p>
               <div className="hero-trust-badges">
-                <div className="hero-trust-badge"><span>✨</span><span>NATURAL RESULTS</span></div>
-                <div className="hero-trust-badge"><span>👨‍⚕️</span><span>EXPERT SURGEONS</span></div>
+                <div className="hero-trust-badge">
+                  <span>✨</span>
+                  <span>NATURAL RESULTS</span>
+                </div>
+                <div className="hero-trust-badge">
+                  <span>👨‍⚕️</span>
+                  <span>EXPERT SURGEONS</span>
+                </div>
               </div>
             </div>
-            <div className="service-hero-form"><LeadForm /></div>
+
+            {/* Pillar 3: Lead Form Container */}
+            <div className="service-hero-form">
+              <LeadForm />
+            </div>
+
           </div>
         </div>
       </section>

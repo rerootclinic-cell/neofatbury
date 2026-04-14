@@ -7,23 +7,51 @@ export default function WeightLoss() {
   return (
     <>
       {/* 1. HERO SECTION - TRIPLE PILLAR */}
+      {/* 1. HERO SECTION - HOME PAGE STYLE DESIGN */}
       <section className="service-hero">
-        <div className="container">
+        <div className="container" style={{ maxWidth: '1450px' }}>
           <div className="service-hero-grid">
+            
+            {/* Pillar 1: Full Visual Subject */}
             <div className="hero-visual-pillar">
               <div className="visual-image-wrapper">
-                <Image src="/images/neofatbury-slimming-standard.png" alt="Weight Loss Treatment" width={500} height={680} priority style={{ objectFit: 'cover', objectPosition: 'top center' }} />
+                <Image 
+                  src="/images/neofatbury-slimming-standard.png" 
+                  alt="Weight Loss Treatment" 
+                  width={650} 
+                  height={800} 
+                  priority 
+                />
               </div>
             </div>
+
+            {/* Pillar 2: Strategic Content Hub */}
             <div className="service-hero-text">
-              <h1>Lose Weight.<br/><span className="accent">Gain Confidence.</span></h1>
-              <p>Doctor-guided weight loss programs designed for safe, effective, and lasting results. Sustainable fat loss tailored to your unique metabolism.</p>
+              <h1>
+                <span className="highlight">Lose Weight.</span> <br/>
+                <span className="accent">Gain Confidence.</span>
+              </h1>
+              <p>
+                Doctor-guided weight loss programs designed for safe, effective, and lasting results. 
+                Experience sustainable fat loss tailored to your unique metabolism with medical supervision.
+              </p>
               <div className="hero-trust-badges">
-                <div className="hero-trust-badge"><span>🥗</span><span>PERSONALIZED PLANS</span></div>
-                <div className="hero-trust-badge"><span>👨‍⚕️</span><span>MEDICALLY SUPERVISED</span></div>
+                <div className="hero-trust-badge">
+                  <span>🥗</span>
+                  <span>PERSONALIZED PLANS</span>
+                </div>
+                <div className="hero-trust-badge">
+                  <span>👨‍⚕️</span>
+                  <span>MEDICALLY SUPERVISED</span>
+                </div>
               </div>
             </div>
-            <div className="service-hero-form"><LeadForm /></div>
+
+            {/* Pillar 3: Lead Form Container */}
+            <div className="service-hero-form">
+              <LeadForm />
+            </div>
+
           </div>
         </div>
       </section>

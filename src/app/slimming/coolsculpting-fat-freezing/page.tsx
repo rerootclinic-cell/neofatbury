@@ -7,23 +7,51 @@ export default function CoolSculpting() {
   return (
     <>
       {/* 1. HERO SECTION - TRIPLE PILLAR */}
+      {/* 1. HERO SECTION - HOME PAGE STYLE DESIGN */}
       <section className="service-hero">
-        <div className="container">
+        <div className="container" style={{ maxWidth: '1450px' }}>
           <div className="service-hero-grid">
+            
+            {/* Pillar 1: Full Visual Subject */}
             <div className="hero-visual-pillar">
               <div className="visual-image-wrapper">
-                <Image src="/images/neofatbury-slimming-standard.png" alt="CoolSculpting Fat Freezing" width={500} height={680} priority style={{ objectFit: 'cover', objectPosition: 'top center' }} />
+                <Image 
+                  src="/images/neofatbury-slimming-standard.png" 
+                  alt="CoolSculpting Fat Freezing" 
+                  width={650} 
+                  height={800} 
+                  priority 
+                />
               </div>
             </div>
+
+            {/* Pillar 2: Strategic Content Hub */}
             <div className="service-hero-text">
-              <h1>Freeze Fat.<br/><span className="accent">Shape Your Body.</span></h1>
-              <p>Non-surgical fat reduction with advanced body contouring technology. Achieve your desired shape with zero surgery and zero downtime.</p>
+              <h1>
+                <span className="highlight">Freeze Fat.</span> <br/>
+                <span className="accent">Shape Your Body.</span>
+              </h1>
+              <p>
+                Non-surgical fat reduction with advanced body contouring technology. 
+                Achieve your desired shape with zero surgery and zero downtime using US-FDA approved cool-sculpting protocols.
+              </p>
               <div className="hero-trust-badges">
-                <div className="hero-trust-badge"><span>❄️</span><span>ZERO DOWNTIME</span></div>
-                <div className="hero-trust-badge"><span>🛡️</span><span>FDA APPROVED</span></div>
+                <div className="hero-trust-badge">
+                  <span>❄️</span>
+                  <span>ZERO DOWNTIME</span>
+                </div>
+                <div className="hero-trust-badge">
+                  <span>🛡️</span>
+                  <span>FDA APPROVED</span>
+                </div>
               </div>
             </div>
-            <div className="service-hero-form"><LeadForm /></div>
+
+            {/* Pillar 3: Lead Form Container */}
+            <div className="service-hero-form">
+              <LeadForm />
+            </div>
+
           </div>
         </div>
       </section>

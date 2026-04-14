@@ -1,4 +1,4 @@
-import { client, urlFor, isSanityConfigured } from '@/sanity/client';
+import { client, isSanityConfigured } from '@/sanity/client';
 import { homePageQuery } from '@/sanity/queries';
 import type { HomePageData } from '@/sanity/types';
 
@@ -7,28 +7,28 @@ const STATIC_HOME: HomePageData = {
   heroHeading: 'Expert Skin, Hair & Slimming Clinic in Hyderabad',
   heroSubheading:
     'Transform your confidence with US-FDA approved treatments and expert dermatological care at NeoFatbury.',
-  heroImage: {} as any,
+  heroImage: { _type: 'image', asset: { _ref: '', _type: 'reference' } },
   trustBadges: ['10+ Years of Expertise', 'US-FDA Approved Tech', '15,000+ Success Stories'],
   specializations: [
     {
       title: 'Skin Care',
       description:
         'Reveal your natural glow with Laser Hair Reduction, Acne Scar Revision, and Skin Brightening peels.',
-      image: {} as any,
+      image: { _type: 'image', asset: { _ref: '', _type: 'reference' } },
       link: '/skin',
     },
     {
       title: 'Hair Restoration',
       description:
         'Advanced clinical solutions for Hair Loss and Anti-Dandruff treatments designed by specialists.',
-      image: {} as any,
+      image: { _type: 'image', asset: { _ref: '', _type: 'reference' } },
       link: '/hair',
     },
     {
       title: 'Weight Management',
       description:
         'Non-surgical body contouring including CoolSculpting (Fat Freezing) and targeted Inch Loss.',
-      image: {} as any,
+      image: { _type: 'image', asset: { _ref: '', _type: 'reference' } },
       link: '/slimming',
     },
   ],

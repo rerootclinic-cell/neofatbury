@@ -5,8 +5,9 @@ import Footer from "@/components/Footer";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 
 export const metadata: Metadata = {
-  title: "NeoFatbury | Advanced Skin, Hair & Slimming Clinic in Hyderabad",
-  description: "Transform your confidence with US-FDA approved treatments and expert dermatological care at NeoFatbury in Kukatpally and Himayatnagar, Hyderabad.",
+  title: "Best Skin, Hair & Slimming Clinic in Hyderabad | NeoFatbury",
+  description: "NeoFatbury is Hyderabad's top clinical destination for US-FDA approved Skin Brightening, Laser Hair Reduction, Hair Transplantation, and CoolSculpting. Located in Kukatpally & Himayatnagar. Book your free clinical analysis today.",
+  keywords: "Skin Clinic Hyderabad, Hair Clinic Hyderabad, Best Dermatologist Kukatpally, Slimming Clinic Himayatnagar, Laser Hair Reduction Hyderabad, CoolSculpting Hyderabad Price",
 };
 
 export default function RootLayout({
@@ -18,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
-        <main style={{ minHeight: '80vh', paddingTop: '106px' }}>
+        <main style={{ minHeight: '80vh', paddingTop: 'var(--header-height)' }}>
           {children}
         </main>
         <Footer />

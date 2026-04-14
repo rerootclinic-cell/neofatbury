@@ -1,4 +1,5 @@
 import { client, isSanityConfigured } from '@/sanity/client';
+import type { SanityImage } from '@/sanity/types';
 
 export interface BlogPostSummary {
   _id: string;
@@ -7,11 +8,11 @@ export interface BlogPostSummary {
   publishedAt: string;
   category: string;
   excerpt: string;
-  featuredImage: any;
+  featuredImage: SanityImage | null;
 }
 
 export interface BlogPostFull extends BlogPostSummary {
-  body: any[];
+  body: unknown[]; // Specific block content types can be added later
   seo: { metaTitle: string; metaDescription: string };
 }
 

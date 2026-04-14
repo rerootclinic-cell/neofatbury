@@ -1,5 +1,6 @@
 "use client";
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 
 export default function Header() {
@@ -8,8 +9,8 @@ export default function Header() {
   return (
     <header style={wrapperStyle}>
       {/* ── TOP BAR ─────────────────────────────────────────── */}
-      <div style={topBarStyle}>
-        <div className="container flex items-center justify-between" style={{ height: '100%' }}>
+      <div style={topBarStyle} className="top-bar-mobile-hide">
+        <div className="flex items-center justify-between" style={{ height: '100%', padding: '0 2rem' }}>
           {/* Left */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', fontSize: '0.82rem', color: '#444' }}>
             <span>🌐 English</span>
@@ -18,10 +19,10 @@ export default function Header() {
           {/* Right quick-links */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', fontSize: '0.82rem' }}>
             <Link href="/about-us" style={topLinkStyle}>About Us</Link>
-            <Link href="/blog" style={topLinkStyle}>Blog</Link>
-            <Link href="/contact-us" style={topLinkStyle}>Ask NeoFatbury</Link>
-            <span style={{ color: '#555' }}>Customer Care · 8 AM–10 PM</span>
-            <a href="tel:9700641000" style={{ ...topLinkStyle, fontWeight: '600', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+            <Link href="/results" style={topLinkStyle}>Results</Link>
+            <Link href="/contact-us" style={topLinkStyle}>Contact</Link>
+            <span style={{ color: '#555' }} className="mobile-hide">Customer Care · 8 AM–10 PM</span>
+            <a href="tel:9700641000" style={{ ...topLinkStyle, fontWeight: '700', color: 'var(--color-primary)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
               📞 9700641000
             </a>
           </div>
@@ -29,53 +30,62 @@ export default function Header() {
       </div>
 
       {/* ── MAIN NAV ────────────────────────────────────────── */}
-      <div style={mainNavStyle}>
-        <div className="container flex items-center justify-between" style={{ height: '100%' }}>
+      <div style={mainNavStyle} className="main-nav-mobile">
+        <div className="flex items-center justify-between" style={{ height: '100%', padding: '0 2rem', width: '100%' }}>
           {/* Logo */}
           <Link href="/" style={logoStyle}>
-            <span style={{ color: 'var(--color-cyan)', fontSize: '2rem', fontWeight: '800' }}>N</span>
-            <span style={{ color: 'var(--color-primary)', fontSize: '1.25rem', fontWeight: '700', letterSpacing: '-0.5px' }}>eo</span>
-            <span style={{ color: 'var(--color-primary)', fontSize: '0.7rem', fontWeight: '500', opacity: 0.8, marginLeft: '2px', textTransform: 'uppercase', letterSpacing: '1.5px', lineHeight: 1 }}>
-              <br/>Fatbury<br/>
-              <span style={{ fontSize: '0.55rem', letterSpacing: '1px' }}>SKIN · HAIR · SLIMMING</span>
-            </span>
+            <Image
+              src="/images/neofatbury-logo-web.png"
+              alt="NeoFatbury Logo"
+              width={180}
+              height={72}
+              priority
+              className="logo-img-mobile"
+              style={{ objectFit: 'contain', height: 'clamp(44px, 10vw, 64px)', width: 'auto' }}
+            />
           </Link>
 
           {/* Nav Links */}
           <nav style={{ display: 'flex', alignItems: 'center', gap: '2rem' }} className="nav-desktop">
-            <NavDropdown label="Treatments" items={[
+            <Link href="/" style={navLinkStyle}>Home</Link>
+            <NavDropdown label="Skin" items={[
+              { label: 'All Skin Treatments', href: '/skin' },
               { label: 'Laser Hair Reduction', href: '/skin/laser-hair-reduction' },
-              { label: 'Acne & Scar Treatment', href: '/skin/acne-scar-treatment' },
+              { label: 'Acne Treatment', href: '/skin/acne-treatment' },
+              { label: 'Acne Scar Treatment', href: '/skin/acne-scar-treatment' },
               { label: 'Skin Brightening', href: '/skin/skin-brightening' },
+            ]} />
+            <NavDropdown label="Hair" items={[
+              { label: 'All Hair Treatments', href: '/hair' },
               { label: 'Hair Loss Treatment', href: '/hair/hair-loss-treatment' },
-              { label: 'CoolSculpting', href: '/slimming/coolsculpting-fat-freezing' },
-              { label: 'Inch Loss', href: '/slimming/inch-loss-treatment' },
+              { label: 'Hair Transplantation', href: '/hair/hair-transplantation' },
             ]} />
-            <NavDropdown label="Conditions" items={[
-              { label: 'Acne', href: '/skin/acne-scar-treatment' },
-              { label: 'Hair Fall', href: '/hair/hair-loss-treatment' },
-              { label: 'Pigmentation', href: '/skin/skin-brightening' },
-              { label: 'Stubborn Fat', href: '/slimming/coolsculpting-fat-freezing' },
+            <NavDropdown label="Slimming" items={[
+              { label: 'All Slimming Treatments', href: '/slimming' },
+              { label: 'CoolSculpting (Fat Freezing)', href: '/slimming/coolsculpting' },
+              { label: 'Weight Loss', href: '/slimming/weight-loss' },
+              { label: 'Inch Loss', href: '/slimming/inch-loss' },
             ]} />
-            <NavDropdown label="Gallery" items={[
+            <NavDropdown label="Results" items={[
               { label: 'Results Gallery', href: '/results' },
             ]} />
             <NavDropdown label="Locations" items={[
-              { label: 'Kukatpally, Hyderabad', href: '/location/kukatpally-hyderabad' },
-              { label: 'Himayatnagar, Hyderabad', href: '/location/himayatnagar-hyderabad' },
+              { label: 'Kukatpally Branch', href: '/location/kukatpally-hyderabad' },
+              { label: 'Himayatnagar Branch', href: '/location/himayatnagar-hyderabad' },
             ]} />
           </nav>
 
           {/* Book Appointment */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <Link href="/contact-us" className="btn btn-book">
-              📅 Book Appointment
+          <div style={{ display: 'flex', alignItems: 'center', gap: 'clamp(0.5rem, 2vw, 1rem)' }}>
+            <Link href="/contact-us" className="btn btn-book header-cta">
+              <span className="cta-full">📅 Book Appointment</span>
+              <span className="cta-short">Book Now</span>
             </Link>
             {/* Mobile hamburger */}
             <button
               className="nav-mobile-toggle"
               onClick={() => setMobileOpen(!mobileOpen)}
-              style={{ fontSize: '1.5rem', color: 'var(--color-primary)', background: 'none', border: 'none' }}
+              style={{ fontSize: '1.5rem', color: 'var(--color-primary)', background: 'none', border: 'none', padding: '0.5rem' }}
             >
               {mobileOpen ? '✕' : '☰'}
             </button>
@@ -85,22 +95,41 @@ export default function Header() {
 
       {/* ── MOBILE MENU ─────────────────────────────────────── */}
       {mobileOpen && (
-        <div style={mobileMenuStyle}>
-          <div className="container" style={{ padding: '1.5rem' }}>
+        <div style={mobileMenuStyle} className="animate-fade-in">
+          <div className="container" style={{ padding: '1rem 1rem 3rem' }}>
+            <Link href="/" onClick={() => setMobileOpen(false)} style={mobileMainLink}>Home</Link>
+            
+            <MobileAccordion label="Skin Treatments" items={[
+              { label: 'All Skin Treatments', href: '/skin' },
+              { label: 'Laser Hair Reduction', href: '/skin/laser-hair-reduction' },
+              { label: 'Acne Treatment', href: '/skin/acne-treatment' },
+              { label: 'Scar Treatment', href: '/skin/scar-treatment' },
+              { label: 'Skin Brightening', href: '/skin/skin-brightening' },
+            ]} onClose={() => setMobileOpen(false)} />
+
+            <MobileAccordion label="Hair Treatments" items={[
+              { label: 'All Hair Treatments', href: '/hair' },
+              { label: 'Hair Loss Treatment', href: '/hair/hair-loss-treatment' },
+              { label: 'Hair Transplantation', href: '/hair/hair-transplantation' },
+            ]} onClose={() => setMobileOpen(false)} />
+
+            <MobileAccordion label="Slimming & Body" items={[
+              { label: 'All Slimming Treatments', href: '/slimming' },
+              { label: 'CoolSculpting', href: '/slimming/coolsculpting' },
+              { label: 'Weight Loss', href: '/slimming/weight-loss' },
+              { label: 'Inch Loss', href: '/slimming/inch-loss' },
+            ]} onClose={() => setMobileOpen(false)} />
+
             {[
-              ['Home', '/'], ['Skin', '/skin'], ['Hair', '/hair'],
-              ['Slimming', '/slimming'], ['Results', '/results'],
-              ['Blog', '/blog'], ['About Us', '/about-us'],
-              ['Contact', '/contact-us'],
+              ['Results Gallery', '/results'],
+              ['Our Doctors', '/our-doctors'],
+              ['About Us', '/about-us'],
+              ['Contact Us', '/contact-us'],
             ].map(([label, href]) => (
-              <Link key={href} href={href} onClick={() => setMobileOpen(false)}
-                style={{ display: 'block', padding: '0.75rem 0', borderBottom: '1px solid var(--color-border)', color: 'var(--color-primary)', fontWeight: '500' }}>
+              <Link key={href} href={href} onClick={() => setMobileOpen(false)} style={mobileMainLink}>
                 {label}
               </Link>
             ))}
-            <Link href="/contact-us" className="btn btn-book" style={{ marginTop: '1rem', width: '100%', justifyContent: 'center' }}>
-              📅 Book Appointment
-            </Link>
           </div>
         </div>
       )}
@@ -108,9 +137,20 @@ export default function Header() {
       <style>{`
         .nav-desktop { }
         .nav-mobile-toggle { display: none !important; }
+        .cta-short { display: none; }
+        
         @media (max-width: 900px) {
           .nav-desktop { display: none !important; }
           .nav-mobile-toggle { display: block !important; }
+          .top-bar-mobile-hide { display: none !important; }
+          .main-nav-mobile { height: 64px !important; }
+          .logo-img-mobile { height: 38px !important; }
+          ${mobileOpen ? '.header-cta { display: none !important; }' : ''}
+        }
+        @media (max-width: 480px) {
+          .header-cta { padding: 0.5rem 1rem !important; font-size: 0.75rem !important; }
+          .cta-full { display: none; }
+          .cta-short { display: inline; }
         }
       `}</style>
     </header>
@@ -144,6 +184,29 @@ function NavDropdown({ label, items }: { label: string; items: { label: string; 
   );
 }
 
+function MobileAccordion({ label, items, onClose }: { label: string; items: { label: string; href: string }[]; onClose: () => void }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div style={{ borderBottom: '1px solid var(--color-border)' }}>
+      <button 
+        onClick={() => setOpen(!open)}
+        style={{ ...mobileMainLink, borderBottom: 'none', width: '100%', justifyContent: 'space-between', padding: '1rem 0' }}
+      >
+        {label} <span style={{ fontSize: '0.7rem', transition: '0.2s', transform: open ? 'rotate(180deg)' : '' }}>▼</span>
+      </button>
+      {open && (
+        <div style={{ padding: '0 0 1rem 1rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          {items.map(item => (
+            <Link key={item.href} href={item.href} onClick={onClose} style={{ fontSize: '0.9rem', color: '#555' }}>
+              • {item.label}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 /* ─── Styles ─────────────────────────────────────────────── */
 const wrapperStyle: React.CSSProperties = {
   position: 'fixed', top: 0, left: 0, right: 0,
@@ -159,7 +222,7 @@ const topBarStyle: React.CSSProperties = {
 
 const mainNavStyle: React.CSSProperties = {
   backgroundColor: 'white',
-  height: '68px',
+  height: '78px',
   display: 'flex',
   alignItems: 'center',
 };
@@ -188,6 +251,16 @@ const navBtnStyle: React.CSSProperties = {
   padding: '0.25rem 0',
 };
 
+const navLinkStyle: React.CSSProperties = {
+  textDecoration: 'none',
+  fontFamily: 'var(--font-heading)',
+  fontWeight: '600',
+  fontSize: '0.9rem',
+  color: 'var(--color-primary)',
+  padding: '0.25rem 0',
+  transition: 'color 0.2s',
+};
+
 const dropdownStyle: React.CSSProperties = {
   position: 'absolute',
   top: '100%',
@@ -210,9 +283,26 @@ const dropItemStyle: React.CSSProperties = {
   borderBottom: '1px solid #f0f0f0',
 };
 
+const mobileMainLink: React.CSSProperties = {
+  display: 'flex',
+  alignItems: 'center',
+  padding: '1rem 0',
+  borderBottom: '1px solid var(--color-border)',
+  color: 'var(--color-primary)',
+  fontWeight: '500',
+  fontSize: '1rem',
+  textDecoration: 'none',
+};
+
 const mobileMenuStyle: React.CSSProperties = {
+  position: 'fixed',
+  top: 'auto',
+  left: 0,
+  right: 0,
+  bottom: 0,
   backgroundColor: 'white',
   borderTop: '1px solid var(--color-border)',
-  maxHeight: '80vh',
+  height: 'calc(100vh - 78px)',
   overflowY: 'auto',
+  zIndex: 999,
 };

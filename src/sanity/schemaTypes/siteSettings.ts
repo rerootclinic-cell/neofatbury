@@ -5,7 +5,6 @@ export const siteSettings = defineType({
   name: 'siteSettings',
   title: '⚙️ Clinic Info & Settings',
   type: 'document',
-  __experimental_actions: ['update', 'publish'],
   fields: [
     defineField({ name: 'clinicName', title: 'Clinic Name', type: 'string', validation: (r) => r.required() }),
     defineField({ name: 'logo', title: 'Logo', type: 'image' }),

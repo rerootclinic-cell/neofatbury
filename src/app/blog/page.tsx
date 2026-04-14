@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -24,6 +25,7 @@ const STATIC_POSTS = [
     category: 'hair',
     excerpt:
       'Hair loss in your 30s is more common than you think. Here are clinically proven steps to slow it down and promote regrowth.',
+    img: '/images/neofatbury-hair2-banner.webp',
   },
   {
     _id: '2',
@@ -33,6 +35,7 @@ const STATIC_POSTS = [
     category: 'skin',
     excerpt:
       'Achieve a natural glow with these proven skin brightening techniques recommended by our expert dermatologists.',
+    img: '/images/neofatbury-cheek-banner.webp',
   },
   {
     _id: '3',
@@ -42,6 +45,7 @@ const STATIC_POSTS = [
     category: 'slimming',
     excerpt:
       'Trying to decide between CoolSculpting and traditional liposuction? We break down the differences, recovery time, and results.',
+    img: '/images/neofatbury-slimming-banner.webp',
   },
 ];
 
@@ -70,18 +74,14 @@ export default function BlogListingPage() {
                 className="card"
                 style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
               >
-                {/* Thumbnail placeholder */}
                 <div
                   style={{
                     height: '200px',
-                    backgroundColor: 'var(--color-surface)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
                     position: 'relative',
+                    overflow: 'hidden'
                   }}
                 >
-                  <span style={{ fontSize: '3rem' }}>📝</span>
+                  <Image src={post.img} alt={post.title} fill style={{ objectFit: 'cover' }} />
                   <span
                     style={{
                       position: 'absolute',
@@ -93,6 +93,7 @@ export default function BlogListingPage() {
                       borderRadius: '4px',
                       fontSize: '0.75rem',
                       fontWeight: '600',
+                      zIndex: 1
                     }}
                   >
                     {CATEGORY_LABELS[post.category] ?? post.category}

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import LeadForm from "@/components/LeadForm";
 
 export default function KukatpallyLocation() {
@@ -17,8 +18,11 @@ export default function KukatpallyLocation() {
               <strong>Phone:</strong> <a href="tel:9700641000" style={{ color: 'var(--color-primary)', fontWeight: 'bold' }}>9700641000</a>
             </address>
           </div>
-          <div>
-            <LeadForm title="Book Appointment at Kukatpally" />
+          <div style={{ flex: '1 1 400px' }}>
+             <div style={{ position: 'relative', height: '300px', borderRadius: 'var(--radius-lg)', overflow: 'hidden', marginBottom: '2rem' }}>
+                <Image src="/images/clinic-reception.webp" alt="NeoFatbury Kukatpally Reception" fill style={{ objectFit: 'cover' }} />
+             </div>
+             <LeadForm title="Book Appointment at Kukatpally" />
           </div>
         </div>
       </section>

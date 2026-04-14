@@ -3,6 +3,14 @@
 
 import { client } from './client'
 
+export const homePageQuery = `*[_type == "homepage"][0]{
+  heroHeading, heroSubheading, heroImage, trustBadges, specializations, whyUsPoints, locationKukatpally, locationHimayatnagar
+}`;
+
+export const servicePageQuery = (slug: string) => `*[_type == "service" && slug.current == "${slug}"][0]{
+  title, heroHeading, heroSubHeading, heroImage, trustBadges, problemHeading, problemPoints, whatIsHeading, whatIsContent, suitableFor, benefitsHeading, benefits, processSteps, faqItems, finalCtaHeading, finalCtaSubtext, seo
+}`;
+
 // ── Homepage ────────────────────────────────────────────
 export async function getHomepage() {
   return client.fetch(`*[_type == "homepage"][0]{

@@ -5,8 +5,6 @@ export const homepage = defineType({
   name: 'homepage',
   title: '🏠 Homepage',
   type: 'document',
-  // Only one homepage document ever
-  __experimental_actions: ['update', 'publish'],
   fields: [
     defineField({
       name: 'hero',

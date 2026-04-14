@@ -6,24 +6,51 @@ import LeadForm from "@/components/LeadForm";
 export default function HairLossTreatment() {
   return (
     <>
-      {/* 1. HERO SECTION - TRIPLE PILLAR */}
+      {/* 1. HERO SECTION - HOME PAGE STYLE DESIGN */}
       <section className="service-hero">
-        <div className="container">
+        <div className="container" style={{ maxWidth: '1450px' }}>
           <div className="service-hero-grid">
+            
+            {/* Pillar 1: Full Visual Subject */}
             <div className="hero-visual-pillar">
               <div className="visual-image-wrapper">
-                <Image src="/images/neofatbury-hair-standard.png" alt="Hair Loss Treatment" width={500} height={680} priority style={{ objectFit: 'cover', objectPosition: 'top center' }} />
+                <Image 
+                  src="/images/neofatbury-hair-standard.png" 
+                  alt="Hair Loss Treatment" 
+                  width={650} 
+                  height={800} 
+                  priority 
+                />
               </div>
             </div>
+
+            {/* Pillar 2: Strategic Content Hub */}
             <div className="service-hero-text">
-              <h1>Full Hair.<br/><span className="accent">Beat Thinning.</span></h1>
-              <p>Advanced clinical hair restoration protocols for effective, long-lasting results. Regain your density and confidence with expert trichology care.</p>
+              <h1>
+                <span className="highlight">Full Hair.</span> <br/>
+                <span className="accent">Beat Thinning.</span>
+              </h1>
+              <p>
+                Advanced clinical hair restoration protocols for effective, long-lasting results. 
+                Regain your density and confidence with expert trichology care and proven US-FDA technology.
+              </p>
               <div className="hero-trust-badges">
-                <div className="hero-trust-badge"><span>💎</span><span>CLINICALLY PROVEN</span></div>
-                <div className="hero-trust-badge"><span>👨‍⚕️</span><span>EXPERT CARE</span></div>
+                <div className="hero-trust-badge">
+                  <span>💎</span>
+                  <span>CLINICALLY PROVEN</span>
+                </div>
+                <div className="hero-trust-badge">
+                  <span>👨‍⚕️</span>
+                  <span>EXPERT CARE</span>
+                </div>
               </div>
             </div>
-            <div className="service-hero-form"><LeadForm /></div>
+
+            {/* Pillar 3: Lead Form Container */}
+            <div className="service-hero-form">
+              <LeadForm />
+            </div>
+
           </div>
         </div>
       </section>

@@ -31,9 +31,9 @@ export default function Header() {
 
       {/* ── MAIN NAV ────────────────────────────────────────── */}
       <div style={mainNavStyle} className="main-nav-mobile">
-        <div className="flex items-center justify-between" style={{ height: '100%', padding: '0 2rem', width: '100%' }}>
-          {/* Logo */}
-          <Link href="/" style={logoStyle}>
+        <div className="flex items-center justify-between" style={{ height: '100%', padding: '0 2rem 0 0', width: '100%', maxWidth: '100%' }}>
+          {/* Logo - Shifted to absolute left corner */}
+          <Link href="/" style={{ ...logoStyle, marginLeft: '0' }}>
             <Image
               src="/images/neofatbury-logo-web.png"
               alt="NeoFatbury Logo"
@@ -41,7 +41,7 @@ export default function Header() {
               height={72}
               priority
               className="logo-img-mobile"
-              style={{ objectFit: 'contain', height: 'clamp(44px, 10vw, 64px)', width: 'auto' }}
+              style={{ objectFit: 'contain', height: 'clamp(44px, 10vw, 60px)', width: 'auto' }}
             />
           </Link>
 

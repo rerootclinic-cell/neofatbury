@@ -165,89 +165,149 @@ button { cursor: pointer; border: none; font-family: var(--font-body); }
 .service-hero-text h1 .accent {
   color: #F39C12;
 }
-.service-hero-text p {
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  color: rgba(255,255,255,0.92);
-  font-weight: 500;
-  line-height: 1.75;
-  margin-bottom: 2.5rem;
-  max-width: 500px;
+/* SERVICE HERO - TRIPLE PILLAR MASTER DESIGN */
+.service-hero {
+  position: relative;
+  min-height: 80vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
+  overflow: hidden;
+  color: #1a1a1a;
 }
+
+.service-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Pillar 1: Full Visual Subject */
+.hero-visual-pillar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.visual-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  align-items: flex-end;
+}
+
+.visual-image-wrapper img {
+  width: 110%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom left;
+  filter: drop-shadow(20px 0 50px rgba(0,0,0,0.1));
+}
+
+/* Pillar 2: Strategic Content Hub */
+.service-hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-hero-text h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 900;
+  color: #1a1a1a;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+.service-hero-text h1 .accent {
+  color: #F39C12;
+}
+
+.service-hero-text h1 .highlight {
+  color: #00acb1;
+}
+
+.service-hero-text p {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  color: #333;
+  font-weight: 500;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+  max-width: 550px;
+}
+
 .hero-trust-badges {
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
   flex-wrap: wrap;
 }
+
 .hero-trust-badge {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.25);
+  gap: 0.75rem;
+  background: white;
+  border: 1px solid rgba(0,172,177,0.2);
   border-radius: 12px;
-  padding: 0.75rem 1.25rem;
-  color: #ffffff;
+  padding: 0.8rem 1.5rem;
+  color: #1a1a1a;
   font-weight: 700;
-  font-size: 0.82rem;
-  letter-spacing: 0.5px;
-}
-.hero-trust-badge span:first-child {
-  font-size: 1.4rem;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-/* Pillar 3: Lead Form */
+.hero-trust-badge span:first-child {
+  font-size: 1.5rem;
+}
+
+/* Pillar 3: Lead Form Container */
 .service-hero-form {
-  background: transparent;
-  padding: 0;
+  position: relative;
+  z-index: 20;
 }
 
 /* ── Mobile Responsive Stacking ── */
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   .service-hero-grid {
-    grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }
-  .service-hero-form {
-    grid-column: span 2;
-    max-width: 500px;
-    margin: 0 auto;
-    width: 100%;
-  }
 }
-@media (max-width: 768px) {
-  .service-hero {
-    padding-top: calc(var(--header-height) + 2rem);
-    padding-bottom: 3rem;
-  }
+
+@media (max-width: 1024px) {
   .service-hero-grid {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 2.5rem;
   }
   .hero-visual-pillar {
-    order: 1;
-  }
-  .visual-image-wrapper {
-    max-width: 280px;
-    aspect-ratio: 1/1;
-    margin: 0 auto;
+    display: none; /* Hide full portrait on small desktop/tablets to save space for lead capture */
   }
   .service-hero-text {
-    order: 2;
     align-items: center;
-    text-align: center;
-  }
-  .service-hero-text p {
-    margin-left: auto;
-    margin-right: auto;
   }
   .hero-trust-badges {
     justify-content: center;
   }
   .service-hero-form {
-    order: 3;
+    max-width: 500px;
+    margin: 0 auto;
     width: 100%;
-    max-width: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-hero {
+    padding-top: calc(var(--header-height) + 1.5rem);
+    padding-bottom: 3rem;
+    min-height: auto;
+  }
+}
     margin: 0 auto;
   }
 }

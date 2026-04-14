@@ -7,47 +7,47 @@ export default function LaserHairReduction() {
   return (
     <>
       {/* 1. HERO SECTION */}
-      {/* 1. HERO SECTION - TRIPLE PILLAR MASTER DESIGN */}
+      {/* 1. HERO SECTION - HOME PAGE STYLE DESIGN */}
       <section className="service-hero">
-        <div className="container" style={{ maxWidth: '1400px' }}>
-          <div className="service-hero-grid" style={{ display: 'grid', gridTemplateColumns: '1.1fr 1.1fr 0.8fr', gap: '3rem', alignItems: 'center' }}>
+        <div className="container" style={{ maxWidth: '1450px' }}>
+          <div className="service-hero-grid">
             
-            {/* Pillar 1: Foreground Visual */}
+            {/* Pillar 1: Full Visual Subject */}
             <div className="hero-visual-pillar">
               <div className="visual-image-wrapper">
                 <Image 
                   src="/images/neofatbury-skin-standard.png" 
                   alt="Laser Hair Reduction" 
-                  width={600} 
-                  height={600} 
-                  style={{ objectFit: 'cover' }}
+                  width={650} 
+                  height={800} 
                   priority 
                 />
               </div>
             </div>
 
-            {/* Pillar 2: Strategic Content */}
+            {/* Pillar 2: Strategic Content Hub */}
             <div className="service-hero-text">
-              <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: '900', color: 'white', lineHeight: '1.1', marginBottom: '2rem' }}>
-                Smooth Skin.<br/>
-                <span style={{ color: '#F39C12' }}>Laser Precision.</span>
+              <h1>
+                <span className="highlight">Smooth Skin.</span> <br/>
+                <span className="accent">Laser Precision.</span>
               </h1>
-              <p style={{ fontSize: '1.3rem', color: 'rgba(255,255,255,0.95)', fontWeight: '500', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '550px' }}>
-                Advanced clinical hair reduction for permanent, smooth results. Pain-free technology designed for all skin types.
+              <p>
+                Advanced clinical hair reduction for permanent, smooth results. 
+                Experience US-FDA approved technology designed for surgical precision and lasting confidence.
               </p>
-              <div style={{ display: 'flex', gap: '1.5rem' }}>
-                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', background: 'rgba(255,255,255,0.1)', padding: '1rem 1.5rem', borderRadius: '15px', border: '1px solid rgba(255,255,255,0.2)' }}>
-                    <span style={{ fontSize: '1.8rem' }}>🛡️</span>
-                    <span style={{ color: 'white', fontWeight: '700', fontSize: '0.85rem' }}>FDA APPROVED</span>
-                 </div>
-                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', background: 'rgba(255,255,255,0.1)', padding: '1rem 1.5rem', borderRadius: '15px', border: '1px solid rgba(255,255,255,0.2)' }}>
-                    <span style={{ fontSize: '1.8rem' }}>💎</span>
-                    <span style={{ color: 'white', fontWeight: '700', fontSize: '0.85rem' }}>GOLD STANDARD</span>
-                 </div>
+              <div className="hero-trust-badges">
+                <div className="hero-trust-badge">
+                  <span>🛡️</span>
+                  <span>US-FDA APPROVED</span>
+                </div>
+                <div className="hero-trust-badge">
+                  <span>💎</span>
+                  <span>GOLD STANDARD</span>
+                </div>
               </div>
             </div>
 
-            {/* Pillar 3: Lead Form */}
+            {/* Pillar 3: Lead Form Container */}
             <div className="service-hero-form">
               <LeadForm />
             </div>

@@ -10,17 +10,17 @@ export default function Header() {
     <header style={wrapperStyle}>
       {/* ── TOP BAR ─────────────────────────────────────────── */}
       <div style={topBarStyle} className="top-bar-mobile-hide">
-        <div className="flex items-center justify-between" style={{ height: '100%', padding: '0 2rem 0 0.5rem' }}>
-          {/* Left */}
+        <div className="flex items-center justify-between" style={{ height: '100%', padding: '0 2rem' }}>
+          {/* Left quick-links */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', fontSize: '0.82rem', color: '#444' }}>
             <span>🌐 English</span>
-          </div>
-
-          {/* Right quick-links */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', fontSize: '0.82rem' }}>
             <Link href="/about-us" style={topLinkStyle}>About Us</Link>
             <Link href="/results" style={topLinkStyle}>Results</Link>
             <Link href="/contact-us" style={topLinkStyle}>Contact</Link>
+          </div>
+
+          {/* Right */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', fontSize: '0.82rem' }}>
             <span style={{ color: '#555' }} className="mobile-hide">Customer Care · 8 AM–10 PM</span>
             <a href="tel:9700641000" style={{ ...topLinkStyle, fontWeight: '700', color: 'var(--color-primary)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
               📞 9700641000
@@ -31,9 +31,9 @@ export default function Header() {
 
       {/* ── MAIN NAV ────────────────────────────────────────── */}
       <div style={mainNavStyle} className="main-nav-mobile">
-        <div className="flex items-center justify-between" style={{ height: '100%', padding: '0 2rem 0 0', width: '100%' }}>
-          {/* Logo - Shifted to absolute left corner */}
-          <Link href="/" style={{ ...logoStyle, marginLeft: '0' }}>
+        <div className="flex items-center justify-between" style={{ height: '100%', padding: '0 2rem', width: '100%' }}>
+          {/* Logo - Pulled to absolute left edge while keeping other items in safe zone */}
+          <Link href="/" style={{ ...logoStyle, marginLeft: '-2.5rem' }}>
             <Image
               src="/images/neofatbury-logo-web.png"
               alt="NeoFatbury Logo"

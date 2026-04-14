@@ -31,24 +31,51 @@ const TREATMENTS = [
 export default function SkinPage() {
   return (
     <>
-      {/* 1. HERO SECTION - TRIPLE PILLAR */}
+      {/* 1. HERO SECTION - HOME PAGE STYLE DESIGN */}
       <section className="service-hero">
-        <div className="container">
+        <div className="container" style={{ maxWidth: '1450px' }}>
           <div className="service-hero-grid">
+            
+            {/* Pillar 1: Full Visual Subject */}
             <div className="hero-visual-pillar">
               <div className="visual-image-wrapper">
-                <Image src="/images/neofatbury-skin-standard.png" alt="Skin Clinic Hyderabad" width={500} height={680} priority style={{ objectFit: 'cover', objectPosition: 'top center' }} />
+                <Image 
+                  src="/images/neofatbury-skin-standard.png" 
+                  alt="Skin Clinic" 
+                  width={650} 
+                  height={800} 
+                  priority 
+                />
               </div>
             </div>
+
+            {/* Pillar 2: Strategic Content Hub */}
             <div className="service-hero-text">
-              <h1>Dermatologist-Led<br/><span className="accent">Advanced Skin Clinic</span></h1>
-              <p>Restore your natural glow with Hyderabad's most trusted skin experts. US-FDA approved technology for safe and effective results.</p>
+              <h1>
+                <span className="highlight">Perfect Skin.</span> <br/>
+                <span className="accent">Expert Care.</span>
+              </h1>
+              <p>
+                Restore your natural glow with Hyderabad's most trusted skin experts. 
+                Experience US-FDA approved technology for safe, effective, and lasting clinical results.
+              </p>
               <div className="hero-trust-badges">
-                <div className="hero-trust-badge"><span>🏥</span><span>EXPERT DOCTORS</span></div>
-                <div className="hero-trust-badge"><span>🛡️</span><span>FDA APPROVED</span></div>
+                <div className="hero-trust-badge">
+                  <span>🏥</span>
+                  <span>EXPERT DOCTORS</span>
+                </div>
+                <div className="hero-trust-badge">
+                  <span>🛡️</span>
+                  <span>FDA APPROVED</span>
+                </div>
               </div>
             </div>
-            <div className="service-hero-form"><LeadForm title="Book Free Skin Analysis" /></div>
+
+            {/* Pillar 3: Lead Form Container */}
+            <div className="service-hero-form">
+              <LeadForm title="Book Free Skin Analysis" />
+            </div>
+
           </div>
         </div>
       </section>

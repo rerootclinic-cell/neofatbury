@@ -25,24 +25,51 @@ const TREATMENTS = [
 export default function HairPage() {
   return (
     <>
-      {/* 1. HERO SECTION - TRIPLE PILLAR */}
+      {/* 1. HERO SECTION - HOME PAGE STYLE DESIGN */}
       <section className="service-hero">
-        <div className="container">
+        <div className="container" style={{ maxWidth: '1450px' }}>
           <div className="service-hero-grid">
+            
+            {/* Pillar 1: Full Visual Subject */}
             <div className="hero-visual-pillar">
               <div className="visual-image-wrapper">
-                <Image src="/images/neofatbury-hair-standard.png" alt="Hair Clinic Hyderabad" width={500} height={680} priority style={{ objectFit: 'cover', objectPosition: 'top center' }} />
+                <Image 
+                  src="/images/neofatbury-hair-standard.png" 
+                  alt="Hair Clinic" 
+                  width={650} 
+                  height={800} 
+                  priority 
+                />
               </div>
             </div>
+
+            {/* Pillar 2: Strategic Content Hub */}
             <div className="service-hero-text">
-              <h1>Reclaim Your Hair,<br/><span className="accent">Restore Confidence</span></h1>
-              <p>Advanced trichology solutions for hair thinning, balding, and scalp health. Personalized treatments to give you thick, healthy hair again.</p>
+              <h1>
+                <span className="highlight">Perfect Hair.</span> <br/>
+                <span className="accent">Total Regrowth.</span>
+              </h1>
+              <p>
+                Advanced trichology solutions for hair thinning, balding, and scalp health. 
+                Regrow your confidence with personalized treatments and proven clinical expertise.
+              </p>
               <div className="hero-trust-badges">
-                <div className="hero-trust-badge"><span>💎</span><span>PROVEN RESULTS</span></div>
-                <div className="hero-trust-badge"><span>👨‍⚕️</span><span>EXPERT CARE</span></div>
+                <div className="hero-trust-badge">
+                  <span>💎</span>
+                  <span>PROVEN RESULTS</span>
+                </div>
+                <div className="hero-trust-badge">
+                  <span>👨‍⚕️</span>
+                  <span>EXPERT CARE</span>
+                </div>
               </div>
             </div>
-            <div className="service-hero-form"><LeadForm title="Book Hair Analysis" /></div>
+
+            {/* Pillar 3: Lead Form Container */}
+            <div className="service-hero-form">
+              <LeadForm title="Book Hair Analysis" />
+            </div>
+
           </div>
         </div>
       </section>

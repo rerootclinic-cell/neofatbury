@@ -8,27 +8,24 @@ export default function WeightLossTreatment() {
 
   return (
     <>
-      {/* 1. HERO SECTION */}
+      {/* 1. HERO SECTION - TRIPLE PILLAR */}
       <section className="service-hero">
-        <div className="container service-hero-container">
-          <div className="service-hero-text">
-            <h1 style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', lineHeight: '1.2', fontWeight: '700', marginBottom: '1.5rem' }}>
-              👉 Lose Weight. <br/><span className="text-accent">Gain Confidence.</span>
-            </h1>
-            <p style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', color: 'var(--color-text-muted)', marginBottom: '2.5rem', maxWidth: '600px' }}>
-              Doctor-guided weight loss programs designed for safe, effective, and lasting results. Personalized plans for sustainable fat loss.
-            </p>
-            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '2.5rem', justifyContent: 'inherit' }}>
-              <span className="chip">✔ Personalized Plans</span>
-              <span className="chip">✔ Medical Supervision</span>
+        <div className="container">
+          <div className="service-hero-grid">
+            <div className="hero-visual-pillar">
+              <div className="visual-image-wrapper">
+                <Image src="/images/neofatbury-slimming-standard.png" alt="Weight Loss Treatment" width={500} height={680} priority style={{ objectFit: 'cover', objectPosition: 'top center' }} />
+              </div>
             </div>
-            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'inherit' }}>
-              <a href="#book" className="btn btn-primary">Book Free Consultation</a>
-              <a href="tel:9700641000" className="btn btn-outline">Call Now</a>
+            <div className="service-hero-text">
+              <h1>Lose Weight.<br/><span className="accent">Gain Confidence.</span></h1>
+              <p>Doctor-guided weight loss programs designed for safe, effective, and lasting results. Sustainable fat loss tailored to your unique metabolism.</p>
+              <div className="hero-trust-badges">
+                <div className="hero-trust-badge"><span>🥗</span><span>PERSONALIZED PLANS</span></div>
+                <div className="hero-trust-badge"><span>👨‍⚕️</span><span>MEDICALLY SUPERVISED</span></div>
+              </div>
             </div>
-          </div>
-          <div className="service-hero-form" id="book">
-            <LeadForm />
+            <div className="service-hero-form"><LeadForm /></div>
           </div>
         </div>
       </section>

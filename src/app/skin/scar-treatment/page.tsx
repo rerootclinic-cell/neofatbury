@@ -6,37 +6,24 @@ import LeadForm from "@/components/LeadForm";
 export default function ScarTreatment() {
   return (
     <>
-      {/* 1. HERO SECTION */}
+      {/* 1. HERO SECTION - TRIPLE PILLAR */}
       <section className="service-hero">
-        <div className="hero-bg-img">
-          <Image src="/images/neofatbury-acne-scar-banner.png" alt="Scar Treatment" fill style={{ objectFit: 'cover', objectPosition: 'right center' }} priority />
-          <div className="hero-bg-overlay" />
-        </div>
-        <div className="container service-hero-container">
+        <div className="container">
           <div className="service-hero-grid">
-            {/* Left: Content */}
+            <div className="hero-visual-pillar">
+              <div className="visual-image-wrapper">
+                <Image src="/images/neofatbury-skin-standard.png" alt="Scar Treatment" width={500} height={680} priority style={{ objectFit: 'cover', objectPosition: 'top center' }} />
+              </div>
+            </div>
             <div className="service-hero-text">
-              <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.4rem)', lineHeight: '1.2', fontWeight: '800', marginBottom: '1.5rem', color: '#1a1a1a' }}>
-                Restore Skin. <br/><span className="text-accent">Zero Scars.</span>
-              </h1>
-              <p style={{ fontSize: '1.2rem', color: '#333', fontWeight: '600', marginBottom: '2.5rem', maxWidth: '600px', lineHeight: '1.7' }}>
-                Advanced clinical scar restoration using surgical-grade technology. Regain your smooth complexion and confidence with Hyderabad's leading skin experts.
-              </p>
-              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
-                <span className="trust-item-sleek">💎 Precision Treatment</span>
-                <span className="trust-item-sleek">🛡️ Safe & Clinical</span>
-                <span className="trust-item-sleek">✨ Smooth Results</span>
-              </div>
-              <div style={{ display: 'flex', gap: '1rem' }}>
-                <Link href="/contact-us" className="btn btn-primary" style={{ padding: '1.2rem 3.5rem', fontSize: '1.1rem' }}>Book Free Consultation</Link>
-                <a href="tel:9700641000" className="btn btn-outline" style={{ padding: '1.2rem 3.5rem', fontSize: '1.1rem' }}>Call Now</a>
+              <h1>Restore Skin.<br/><span className="accent">Zero Scars.</span></h1>
+              <p>Advanced clinical scar restoration using surgical-grade technology. Regain your smooth complexion with Hyderabad's leading skin experts.</p>
+              <div className="hero-trust-badges">
+                <div className="hero-trust-badge"><span>💎</span><span>PRECISION TECH</span></div>
+                <div className="hero-trust-badge"><span>🛡️</span><span>FDA APPROVED</span></div>
               </div>
             </div>
-
-            {/* Right: Lead Form */}
-            <div className="service-hero-form">
-              <LeadForm />
-            </div>
+            <div className="service-hero-form"><LeadForm /></div>
           </div>
         </div>
       </section>

@@ -6,37 +6,24 @@ import LeadForm from "@/components/LeadForm";
 export default function InchLoss() {
   return (
     <>
-      {/* 1. HERO SECTION */}
+      {/* 1. HERO SECTION - TRIPLE PILLAR */}
       <section className="service-hero">
-        <div className="hero-bg-img">
-          <Image src="/images/neofatbury-slimming-standard.png" alt="Inch Loss" fill style={{ objectFit: 'cover', objectPosition: 'right center' }} priority />
-          <div className="hero-bg-overlay" />
-        </div>
-        <div className="container service-hero-container">
+        <div className="container">
           <div className="service-hero-grid">
-            {/* Left: Content */}
+            <div className="hero-visual-pillar">
+              <div className="visual-image-wrapper">
+                <Image src="/images/neofatbury-slimming-standard.png" alt="Inch Loss" width={500} height={680} priority style={{ objectFit: 'cover', objectPosition: 'top center' }} />
+              </div>
+            </div>
             <div className="service-hero-text">
-              <h1 className="service-title" style={{ fontWeight: '800', marginBottom: '1.5rem', color: '#1a1a1a' }}>
-                Lose Inches. <br/><span className="text-accent">Shape Your Body.</span>
-              </h1>
-              <p className="service-sub" style={{ fontWeight: '600', marginBottom: '2.5rem', maxWidth: '600px', lineHeight: '1.7' }}>
-                Target stubborn fat and reduce body measurements with advanced, non-surgical refinement. Achieve a slimmer, more sculpted profile with zero downtime.
-              </p>
-              <div className="trust-row-sleek">
-                <span className="trust-item-sleek">📏 Precision Targeting</span>
-                <span className="trust-item-sleek">✨ Visible Reduction</span>
-                <span className="trust-item-sleek">🛡️ Safe & Effective</span>
-              </div>
-              <div className="hero-btns">
-                <Link href="/contact-us" className="btn btn-primary btn-cta-main">Book Free Consultation</Link>
-                <a href="tel:9700641000" className="btn btn-outline btn-cta-main">Call Now</a>
+              <h1>Lose Inches.<br/><span className="accent">Shape Your Body.</span></h1>
+              <p>Target stubborn fat and reduce body measurements with advanced, non-surgical refinement. Achieve a slimmer, more sculpted profile with zero downtime.</p>
+              <div className="hero-trust-badges">
+                <div className="hero-trust-badge"><span>📏</span><span>PRECISION TARGETING</span></div>
+                <div className="hero-trust-badge"><span>✨</span><span>VISIBLE REDUCTION</span></div>
               </div>
             </div>
-
-            {/* Right: Lead Form */}
-            <div className="service-hero-form">
-              <LeadForm />
-            </div>
+            <div className="service-hero-form"><LeadForm /></div>
           </div>
         </div>
       </section>
